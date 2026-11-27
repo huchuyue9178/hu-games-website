@@ -404,6 +404,30 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
   white-space:nowrap;
 }
 
+/* ===== 临时公告弹窗（右上角） ===== */
+.promo{
+  position:fixed;top:94px;right:26px;z-index:1000;width:334px;max-width:calc(100vw - 34px);
+  padding:15px 17px 16px;border-radius:20px;
+  opacity:0;transform:translateY(-14px) scale(.97);pointer-events:none;
+  transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);
+}
+.promo.show{opacity:1;transform:none;pointer-events:auto}
+.promo-top{display:flex;align-items:center;gap:10px}
+.promo .tag24{
+  flex:0 0 auto;font-size:10.5px;font-weight:700;letter-spacing:1px;color:#2a1a00;
+  padding:4px 9px;border-radius:999px;background:linear-gradient(180deg,#ffe9b2,#d4af37);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+}
+.promo .lbl{flex:1;font-size:13px;font-weight:700;color:#fff;letter-spacing:.3px;white-space:nowrap}
+.promo-x{
+  flex:0 0 auto;width:24px;height:24px;border-radius:50%;cursor:pointer;font-family:inherit;
+  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);
+  color:rgba(255,255,255,.72);font-size:11px;line-height:1;transition:.2s;
+}
+.promo-x:hover{background:rgba(255,255,255,.2);color:#fff}
+.promo p{margin-top:10px;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.72)}
+.promo p b{color:rgba(255,255,255,.94);font-weight:700}
+
 /* ============ 响应式 ============ */
 @media(max-width:980px){
   .hero-inner,.feature-head,.about-wrap{grid-template-columns:1fr;gap:34px}
@@ -417,6 +441,8 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
   .section-alt{padding:92px 0}
   .news-item{flex-direction:column;align-items:flex-start;gap:8px}
   .play-bar .hint{display:none}
+  .promo{left:50%;right:auto;top:86px;width:min(92vw,382px);transform:translate(-50%,-14px) scale(.97)}
+  .promo.show{transform:translate(-50%,0)}
   .play-bar .pt{font-size:12px}
   .recruit-box{padding:26px}
 }
@@ -505,6 +531,17 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
     </div>
   </div>
 </nav>
+
+
+<!-- 临时公告弹窗 -->
+<div class="promo glass" id="promo" role="dialog" aria-live="polite" aria-label="正式版上线公告">
+  <div class="promo-top">
+    <span class="tag24">24H</span>
+    <span class="lbl">正式版即将上线</span>
+    <button class="promo-x" id="promoClose" aria-label="关闭公告">✕</button>
+  </div>
+  <p><b>《偷吃乌龟 2026》与《零点射击场》目前仅支持官网试玩</b>，正式版本将于 24 小时后上线，敬请期待。</p>
+</div>
 
 <!-- Hero -->
 <section class="hero">
@@ -10677,6 +10714,17 @@ function closePlay() {
 }
 document.getElementById("playClose").addEventListener("click", closePlay);
 document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("on")) closePlay(); });
+
+(function(){
+  var p = document.getElementById('promo');
+  var c = document.getElementById('promoClose');
+  if (!p) return;
+  setTimeout(function(){ p.classList.add('show'); }, 3000);
+  if (c) c.addEventListener('click', function(){
+    p.classList.remove('show');
+    setTimeout(function(){ if (p.parentNode) p.parentNode.removeChild(p); }, 600);
+  });
+})();
 </script>
 
 <script>
