@@ -359,7 +359,7 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 }
 .play-bar .pt{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.9);letter-spacing:.5px}
 .play-bar .pt i{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px rgba(94,224,192,.9)}
-.play-bar .hint{font-size:11px;color:rgba(255,255,255,.5)}
+.play-bar .hint{font-size:11px;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .close-btn{
   border:1px solid rgba(255,255,255,.22);color:#eafaf6;border-radius:var(--r-pill);
   padding:8px 18px;font-size:12.5px;cursor:pointer;font-family:inherit;
@@ -380,6 +380,30 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 .card-playing.right{left:auto;right:14px}
 .card-playing.new{color:#2a0d00;background:linear-gradient(180deg,#ffb08a,#ff5a1f);box-shadow:0 8px 24px rgba(255,90,31,.4),inset 0 1px 0 rgba(255,255,255,.6)}
 
+
+/* ===== 试玩版说明 ===== */
+.demo-note{
+  display:flex;align-items:flex-start;gap:11px;max-width:560px;margin-top:24px;
+  padding:14px 18px;border-radius:16px;font-size:12.8px;line-height:1.75;
+  color:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(140deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+}
+.demo-note b{color:rgba(255,255,255,.92);font-weight:700}
+.demo-note .ic{
+  flex:0 0 auto;width:18px;height:18px;border-radius:50%;margin-top:2px;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-style:normal;
+  color:#06211b;background:linear-gradient(180deg,#b7f8ea,#5ee0c0);
+  box-shadow:0 4px 12px rgba(94,224,192,.35),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.demo-note.orange .ic{color:#2a0d00;background:linear-gradient(180deg,#ffc3a4,#ff5a1f);box-shadow:0 4px 12px rgba(255,90,31,.32),inset 0 1px 0 rgba(255,255,255,.7)}
+.demo-badge{
+  font-size:10.5px;letter-spacing:1px;padding:4px 10px;border-radius:999px;
+  color:#6ff0d8;border:1px solid rgba(94,224,192,.35);
+  background:linear-gradient(140deg,rgba(94,224,192,.16),rgba(94,224,192,.03));
+  white-space:nowrap;
+}
+
 /* ============ 响应式 ============ */
 @media(max-width:980px){
   .hero-inner,.feature-head,.about-wrap{grid-template-columns:1fr;gap:34px}
@@ -392,6 +416,8 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
   section{padding:80px 0}
   .section-alt{padding:92px 0}
   .news-item{flex-direction:column;align-items:flex-start;gap:8px}
+  .play-bar .hint{display:none}
+  .play-bar .pt{font-size:12px}
   .recruit-box{padding:26px}
 }
 
@@ -531,6 +557,10 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
           <button class="btn mint" data-play>▶ 开始试玩</button>
           <a href="#mechanics" class="btn ghost sm">玩法说明</a>
         </div>
+        <div class="demo-note fade">
+          <i class="ic">!</i>
+          <span><b>官网试玩版不支持账号登录。</b>进度存档、成长与账号数据无法同步，账号成长、云端存档与部分解锁内容不可体验；完整体验请在正式客户端进行。</span>
+        </div>
       </div>
       <div class="fade">
         <div class="shot glass" data-play>
@@ -625,6 +655,10 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
           <button class="btn mint" data-play data-game="range">▶ 开始射击</button>
           <a href="#games" class="btn ghost sm">查看全部作品</a>
         </div>
+        <div class="demo-note orange">
+          <i class="ic">!</i>
+          <span><b>官网试玩版不支持账号登录。</b>积分余额、最高分与军械库涂装等账号内容无法同步解锁，战绩仅保存在本机；完整体验请在正式客户端进行。</span>
+        </div>
       </div>
     </div>
 
@@ -667,7 +701,7 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 <section id="games" class="section-alt">
   <div class="container">
     <h2 class="section-title fade"><span class="bar"></span>游戏作品</h2>
-    <p class="section-sub fade">轻松上手的摸金体验，持续打磨潜入手感与开箱反馈。</p>
+    <p class="section-sub fade">两个品类、两款作品，都能在官网直接开玩。均为试玩版：不支持账号登录，存档同步与账号成长需在正式客户端体验。</p>
     <div class="game-grid">
       <div class="game-card glass fade">
         <div class="card-img">
@@ -788,7 +822,7 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 <!-- 试玩弹窗 -->
 <div class="play-modal" id="playModal">
   <div class="play-bar">
-    <div class="pt"><i></i><span id="playTitle">偷吃乌龟 2026 · 官网试玩版</span></div>
+    <div class="pt"><i></i><span class="demo-badge">试玩版 · 未登录</span><span id="playTitle">偷吃乌龟 2026 · 官网试玩版</span></div>
     <div class="hint" id="playHint">点击画面获取键盘控制 · Esc 暂停</div>
     <button class="close-btn" id="playClose">关闭试玩</button>
   </div>
