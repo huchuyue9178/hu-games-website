@@ -365,6 +365,41 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 .footer-links{display:flex;gap:22px}
 .footer-links a:hover{color:#fff}
 
+/* ============ 加入我们（扩展） ============ */
+.recruit-lead{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap;margin:6px 0 28px}
+.recruit-lead p{max-width:590px;font-size:15px;line-height:1.95;color:rgba(255,255,255,.7)}
+.recruit-stats{display:flex;gap:10px;flex-wrap:wrap}
+.recruit-stats span{padding:8px 15px;border-radius:999px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.12);background:linear-gradient(120deg,rgba(255,255,255,.08),rgba(255,255,255,.03))}
+.recruit-stats b{color:var(--gold);font-weight:800;margin-right:4px}
+.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.role-card{padding:24px 24px 22px;border-radius:24px}
+.role-card .rc-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.role-card h4{font-size:18px;font-weight:800;letter-spacing:.5px}
+.role-card .rc-type{flex:none;font-size:11px;letter-spacing:.5px;color:var(--mint);padding:4px 9px;border-radius:999px;
+  border:1px solid rgba(94,224,192,.3);background:rgba(94,224,192,.08);white-space:nowrap}
+.role-card p{font-size:13.5px;line-height:1.85;color:rgba(255,255,255,.62)}
+.role-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.role-tags span{font-size:11.5px;color:rgba(255,255,255,.72);padding:5px 10px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.recruit-values{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.recruit-values span{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.74);
+  padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.recruit-values span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px rgba(94,224,192,.7)}
+.recruit-sub{font-size:18px;font-weight:800;letter-spacing:1px;margin:38px 0 14px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{padding:18px 20px 20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.step em{display:block;font-style:normal;font-size:10.5px;letter-spacing:2px;color:var(--gold);margin-bottom:8px}
+.step b{display:block;font-size:14.5px;font-weight:800}
+.step p{margin-top:6px;font-size:12.5px;line-height:1.75;color:rgba(255,255,255,.55)}
+.recruit-cta{margin-top:24px;padding:32px 34px;border-radius:26px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.recruit-cta .rc-copy{flex:1 1 420px;min-width:280px}
+.recruit-cta h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.recruit-cta p{font-size:13.5px;line-height:1.9;color:rgba(255,255,255,.62)}
+.recruit-cta p a{color:var(--mint);border-bottom:1px solid rgba(94,224,192,.4)}
+.recruit-cta .perks{margin:16px 0 0}
+.recruit-cta .rc-acts{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
 /* ============ 试玩弹窗 ============ */
 .play-modal{position:fixed;inset:0;z-index:9000;display:none;flex-direction:column;background:radial-gradient(circle at 50% 18%,#0a1a19,#05100f 70%)}
 .play-modal.on{display:flex}
@@ -560,6 +595,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav-toggle{display:grid}
   .nav-links a:not(.nav-play){display:none}
   .to-top{right:16px;bottom:18px;width:46px;height:46px}
+  .role-grid{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr 1fr}
+  .recruit-lead,.recruit-cta{flex-direction:column;align-items:flex-start}
+  .recruit-cta{padding:24px}
+  .recruit-cta .rc-acts{width:100%}
+  .recruit-cta .rc-acts .btn{flex:1 1 auto;justify-content:center}
+  .recruit-sub{margin-top:30px}
   .play-loading{top:66px}
   .footer-links{justify-content:flex-start}
   .logo::after{display:none}
@@ -1036,15 +1078,65 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 <section id="recruit">
   <div class="container">
     <h2 class="section-title fade"><span class="bar"></span>加入我们</h2>
-    <div style="height:20px"></div>
-    <div class="recruit-box glass fade">
-      <p>如果你喜欢独立游戏、寻宝题材与卡通美术，欢迎投递简历，和我们一起做好玩的摸金游戏。</p>
-      <div class="perks">
-        <span class="tag">远程协作</span>
-        <span class="tag">独立项目空间</span>
-        <span class="tag">作品署名</span>
+    <p class="section-sub fade">小团队、慢招聘：只招真正想长期做游戏的人。作品集比学历重要，远程协作、按项目署名。</p>
+
+    <div class="recruit-lead fade">
+      <p>Hu Games 现在还是一个很小的团队，做的是「轻松、耐玩、打开就能玩」的游戏。我们不开无意义的会、不追热点，只把每一款作品打磨到能拿出手。如果你也这么想，欢迎直接带着作品来找我们。</p>
+      <div class="recruit-stats">
+        <span><b>3</b> 个开放岗位</span>
+        <span><b>100%</b> 远程</span>
+        <span><b>署名</b> + 项目分成</span>
       </div>
-      <a href="mailto:contact@hugames.dev" class="btn gold">联系我们 →</a>
+    </div>
+
+    <div class="role-grid fade">
+      <div class="role-card glass">
+        <div class="rc-top"><h4>H5 游戏开发</h4><span class="rc-type">全职 / 远程</span></div>
+        <p>负责官网试玩版与正式版的玩法、界面与性能，把策划案变成能稳定跑 60 帧的页面游戏。</p>
+        <div class="role-tags"><span>JS / TS</span><span>Canvas · WebGL</span><span>Three.js 加分</span></div>
+      </div>
+      <div class="role-card glass">
+        <div class="rc-top"><h4>2D 美术 / 动画</h4><span class="rc-type">兼职 / 远程</span></div>
+        <p>负责角色、场景、UI 与动效，让「摸金」的紧张感和卡通感同时成立；会 Spine 或序列帧更好。</p>
+        <div class="role-tags"><span>卡通厚涂</span><span>矢量 / 像素</span><span>UI 与动效</span></div>
+      </div>
+      <div class="role-card glass">
+        <div class="rc-top"><h4>玩法策划</h4><span class="rc-type">全职 / 远程</span></div>
+        <p>负责关卡节奏、经济循环、掉落与难度曲线，能把规则写清、数值算清、流程画清，并做出可玩原型。</p>
+        <div class="role-tags"><span>摸金 / 射击</span><span>数值与掉落</span><span>原型 demo</span></div>
+      </div>
+    </div>
+
+    <div class="recruit-values fade">
+      <span>作品集优先于学历</span>
+      <span>能独立跑通一个小闭环</span>
+      <span>愿意反复试玩自己的作品</span>
+      <span>长期主义，不追热点</span>
+    </div>
+
+    <h3 class="recruit-sub fade">招聘流程</h3>
+    <div class="process fade">
+      <div class="step"><em>STEP 01</em><b>投递</b><p>邮件 + 作品集 / GitHub / 可玩 demo，标题写「应聘岗位 + 姓名」。</p></div>
+      <div class="step"><em>STEP 02</em><b>48 小时内回复</b><p>合适就约一次 30 分钟的远程聊聊，聊作品、聊你想做的游戏。</p></div>
+      <div class="step"><em>STEP 03</em><b>一个小任务</b><p>1–2 周的小题目或试玩反馈，按正常时薪结算，不白嫖方案。</p></div>
+      <div class="step"><em>STEP 04</em><b>确认合作</b><p>确定岗位、周期与署名方式，签合作协议后正式开工。</p></div>
+    </div>
+
+    <div class="recruit-cta glass fade">
+      <div class="rc-copy">
+        <h3>投递方式</h3>
+        <p>把简历和作品发到 <a href="mailto:contact@hugames.dev?subject=%E5%BA%94%E8%81%98%20Hu%20Games">contact@hugames.dev</a>。应届、个人开发者、业余做游戏的同学都欢迎——只要有能玩的东西，我们就愿意聊。暂时没有对口岗位也可以自荐。</p>
+        <div class="perks">
+          <span class="tag">远程协作</span>
+          <span class="tag">弹性工时</span>
+          <span class="tag">项目署名</span>
+          <span class="tag">分成与奖金</span>
+        </div>
+      </div>
+      <div class="rc-acts">
+        <a href="mailto:contact@hugames.dev?subject=%E5%BA%94%E8%81%98%20Hu%20Games" class="btn gold">投递简历 →</a>
+        <a href="https://github.com/huchuyue9178" target="_blank" rel="noopener" class="btn ghost sm">看看 GitHub</a>
+      </div>
     </div>
   </div>
 </section>
