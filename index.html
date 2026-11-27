@@ -427,6 +427,19 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 .promo-x:hover{background:rgba(255,255,255,.2);color:#fff}
 .promo p{margin-top:10px;font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.72)}
 .promo p b{color:rgba(255,255,255,.94);font-weight:700}
+.promo-go{
+  display:inline-flex;align-items:center;margin-top:11px;padding:7px 13px;border-radius:999px;
+  font-size:11.5px;font-weight:700;color:#2a1a00;
+  background:linear-gradient(180deg,#ffe9b2,#d4af37);
+  box-shadow:0 8px 20px rgba(212,175,55,.28),inset 0 1px 0 rgba(255,255,255,.85);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.promo-go:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(212,175,55,.4)}
+
+/* ===== 正式版入口 ===== */
+.card-actions{display:flex;gap:10px;align-items:stretch}
+.card-actions .btn{width:auto!important;flex:0 0 auto}
+.card-actions .btn.mint{flex:1 1 auto}
 
 /* ============ 响应式 ============ */
 @media(max-width:980px){
@@ -537,10 +550,11 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 <div class="promo glass" id="promo" role="dialog" aria-live="polite" aria-label="正式版上线公告">
   <div class="promo-top">
     <span class="tag24">24H</span>
-    <span class="lbl">正式版即将上线</span>
+    <span class="lbl">正式版动态</span>
     <button class="promo-x" id="promoClose" aria-label="关闭公告">✕</button>
   </div>
-  <p><b>《偷吃乌龟 2026》与《零点射击场》目前仅支持官网试玩</b>，正式版本将于 24 小时后上线，敬请期待。</p>
+  <p><b>《偷吃乌龟 2026》正式版已上线</b>，官网内为试玩版；<b>《零点射击场》</b>正式版将于 24 小时后上线，敬请期待。</p>
+  <a class="promo-go" href="https://huchuyue9178.github.io/touchi-turtle-2026/" target="_blank" rel="noopener">前往《偷吃乌龟 2026》正式版 →</a>
 </div>
 
 <!-- Hero -->
@@ -592,6 +606,7 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
         </div>
         <div class="btn-row">
           <button class="btn mint" data-play>▶ 开始试玩</button>
+          <a href="https://huchuyue9178.github.io/touchi-turtle-2026/" target="_blank" rel="noopener" class="btn gold">正式版 ↗</a>
           <a href="#mechanics" class="btn ghost sm">玩法说明</a>
         </div>
         <div class="demo-note fade">
@@ -662,6 +677,7 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
 
     <div class="btn-row fade" style="margin-top:46px">
       <button class="btn mint" data-play>▶ 在官网直接试玩</button>
+      <a href="https://huchuyue9178.github.io/touchi-turtle-2026/" target="_blank" rel="noopener" class="btn gold">前往正式版 ↗</a>
       <a href="#games" class="btn ghost sm">查看全部作品</a>
     </div>
   </div>
@@ -750,7 +766,10 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
           <div class="sub">潜入 · 撬箱 · 摸粮 · 开溜</div>
           <p>潜入储物区撬箱摸龟粮，泡泡枪只控场不击杀，警觉满了就被封锁，见好就收撤离才全额带走。</p>
           <div class="card-meta"><span>单局 1～3 分钟</span><span>食物图鉴</span><span>龟壳强化</span></div>
-          <button class="btn mint sm" data-play>▶ 试玩</button>
+          <div class="card-actions">
+            <button class="btn mint sm" data-play>▶ 试玩</button>
+            <a href="https://huchuyue9178.github.io/touchi-turtle-2026/" target="_blank" rel="noopener" class="btn ghost sm">正式版 ↗</a>
+          </div>
         </div>
       </div>
       <div class="game-card glass fade">
@@ -801,8 +820,13 @@ footer{padding:48px 0 60px;color:rgba(255,255,255,.5);font-size:13.5px;position:
     <div class="news-list glass fade">
       <div class="news-item">
         <span class="news-date">2026.11</span>
+        <span class="news-title">《偷吃乌龟 2026》正式版上线，官网试玩版继续保留</span>
+        <span class="news-tag">正式版</span>
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.11</span>
         <span class="news-title">《偷吃乌龟 2026》上线官网，可直接在线试玩</span>
-        <span class="news-tag">上线</span>
+        <span class="news-tag">试玩</span>
       </div>
       <div class="news-item">
         <span class="news-date">2026.11</span>
