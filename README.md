@@ -21,6 +21,7 @@ Hu Games 的官方网站，单文件构建，黑底 + 金色 + 薄荷绿的液�
 - **内容与分享**：常见问题 FAQ、结构化元信息（SEO / Open Graph / JSON-LD）、社交预览封面 `og-cover.jpg`
 
 - 《偷吃乌龟 2026》正式版：https://huchuyue9178.github.io/touchi-turtle-2026/
+- 《零点射击场 ZEROING RANGE》正式版：https://huchuyue9178.github.io/zeroing-range/
 
 ## 目录
 
