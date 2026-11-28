@@ -638,19 +638,19 @@ section{padding:clamp(78px,8vw,110px) 0}
 /* ============ 液态玻璃：折射增强 ============ */
 .glass{
   background:
-    linear-gradient(158deg,rgba(255,255,255,.038),rgba(255,255,255,.006) 46%,rgba(255,255,255,.022) 100%),
-    linear-gradient(148deg,rgba(255,255,255,.045),rgba(255,255,255,.012) 52%,rgba(255,255,255,.03));
-  -webkit-backdrop-filter:blur(30px) saturate(215%) brightness(1.01);
-  backdrop-filter:blur(30px) saturate(215%) brightness(1.01);
-  border:1px solid rgba(255,255,255,.24);
+    linear-gradient(160deg,rgba(255,255,255,.024),rgba(255,255,255,.003) 48%,rgba(255,255,255,.014) 100%),
+    linear-gradient(148deg,rgba(255,255,255,.018),rgba(255,255,255,.004) 55%,rgba(255,255,255,.012));
+  -webkit-backdrop-filter:blur(13px) saturate(235%) brightness(.99) contrast(1.03);
+  backdrop-filter:blur(13px) saturate(235%) brightness(.99) contrast(1.03);
+  border:1px solid rgba(255,255,255,.3);
   box-shadow:
-    0 36px 86px rgba(0,0,0,.52),
-    0 8px 22px rgba(0,0,0,.3),
-    inset 0 2px 2px rgba(255,255,255,.5),
-    inset 0 -30px 50px rgba(0,0,0,.26),
-    inset 1px 0 0 rgba(255,255,255,.22),
-    inset -1px 0 0 rgba(255,255,255,.16),
-    0 0 0 1px rgba(255,255,255,.05);
+    0 32px 74px rgba(0,0,0,.44),
+    0 6px 18px rgba(0,0,0,.24),
+    inset 0 1px 1px rgba(255,255,255,.62),
+    inset 0 -20px 34px rgba(0,0,0,.12),
+    inset 1px 0 0 rgba(255,255,255,.26),
+    inset -1px 0 0 rgba(255,255,255,.18),
+    0 0 0 1px rgba(255,255,255,.07);
 }
 .glass::before{
   background:
@@ -662,36 +662,36 @@ section{padding:clamp(78px,8vw,110px) 0}
     conic-gradient(from 200deg at 45% 130%,rgba(94,224,192,.08),transparent 30%,rgba(212,175,55,.07) 62%,transparent 85%);
   background-size:100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,190% 190%;
   animation:glassFlow 26s ease-in-out infinite alternate;
-  opacity:.78;
+  opacity:.9;
 }
 @keyframes glassFlow{from{background-position:0 0,0 0,0 0,0% 0%}to{background-position:0 0,0 0,0 0,100% 100%}}
 .glass::after{
   background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(255,255,255,.1) 28%,rgba(94,224,192,.62) 58%,rgba(212,175,55,.68) 88%);
-  opacity:.72;
+  opacity:.85;
 }
 .glass:hover::after{opacity:1}
 
 /* 导航胶囊 */
 .nav-shell{
   background:
-    linear-gradient(128deg,rgba(255,255,255,.09),rgba(255,255,255,.02) 52%,rgba(255,255,255,.06)),
-    linear-gradient(180deg,rgba(255,255,255,.06),transparent 42%);
-  -webkit-backdrop-filter:blur(32px) saturate(220%) brightness(1.02);
-  backdrop-filter:blur(32px) saturate(220%) brightness(1.02);
-  border-color:rgba(255,255,255,.26);
-  box-shadow:0 24px 60px rgba(0,0,0,.52),inset 0 2px 2px rgba(255,255,255,.55),inset 0 -1px 0 rgba(255,255,255,.18);
+    linear-gradient(128deg,rgba(255,255,255,.035),rgba(255,255,255,.008) 52%,rgba(255,255,255,.025)),
+    linear-gradient(180deg,rgba(255,255,255,.03),transparent 44%);
+  -webkit-backdrop-filter:blur(18px) saturate(240%) brightness(1.0);
+  backdrop-filter:blur(18px) saturate(240%) brightness(1.0);
+  border-color:rgba(255,255,255,.32);
+  box-shadow:0 22px 54px rgba(0,0,0,.46),inset 0 1px 1px rgba(255,255,255,.62),inset 0 -1px 0 rgba(255,255,255,.2);
 }
 nav.scrolled .nav-shell{background:linear-gradient(125deg,rgba(255,255,255,.2),rgba(255,255,255,.04) 56%,rgba(255,255,255,.14));box-shadow:0 26px 64px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.6)}
 
 /* 试玩浮层顶栏 */
 .play-bar{
   background:
-    linear-gradient(142deg,rgba(255,255,255,.1),rgba(255,255,255,.02)),
-    linear-gradient(180deg,rgba(255,255,255,.07),transparent 45%);
-  -webkit-backdrop-filter:blur(32px) saturate(220%) brightness(1.02);
-  backdrop-filter:blur(32px) saturate(220%) brightness(1.02);
-  border-color:rgba(255,255,255,.26);
-  box-shadow:0 20px 48px rgba(0,0,0,.48),inset 0 2px 2px rgba(255,255,255,.5);
+    linear-gradient(142deg,rgba(255,255,255,.04),rgba(255,255,255,.008)),
+    linear-gradient(180deg,rgba(255,255,255,.035),transparent 46%);
+  -webkit-backdrop-filter:blur(18px) saturate(240%) brightness(1.0);
+  backdrop-filter:blur(18px) saturate(240%) brightness(1.0);
+  border-color:rgba(255,255,255,.32);
+  box-shadow:0 18px 44px rgba(0,0,0,.42),inset 0 1px 1px rgba(255,255,255,.6);
 }
 
 /* 按钮：玻璃高光 + 划过时的液态反光 */
@@ -729,16 +729,16 @@ nav.scrolled .nav-shell{background:linear-gradient(125deg,rgba(255,255,255,.2),r
   -webkit-backdrop-filter:blur(10px) saturate(150%);backdrop-filter:blur(10px) saturate(150%);
 }
 .step{
-  background:linear-gradient(140deg,rgba(255,255,255,.055),rgba(255,255,255,.012) 70%),
-    linear-gradient(180deg,rgba(255,255,255,.05),transparent 45%);
-  box-shadow:inset 0 2px 2px rgba(255,255,255,.32),inset 0 -12px 22px rgba(0,0,0,.2),0 12px 30px rgba(0,0,0,.24);
-  -webkit-backdrop-filter:blur(16px) saturate(200%);backdrop-filter:blur(16px) saturate(200%);
+  background:linear-gradient(140deg,rgba(255,255,255,.03),rgba(255,255,255,.005) 70%),
+    linear-gradient(180deg,rgba(255,255,255,.03),transparent 46%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.38),inset 0 -12px 22px rgba(0,0,0,.1),0 12px 30px rgba(0,0,0,.2);
+  -webkit-backdrop-filter:blur(12px) saturate(230%);backdrop-filter:blur(12px) saturate(230%);
 }
 .faq-item{
-  background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.012) 58%,rgba(255,255,255,.035)),
-    linear-gradient(180deg,rgba(255,255,255,.055),transparent 46%);
-  box-shadow:inset 0 2px 2px rgba(255,255,255,.34),inset 0 -14px 26px rgba(0,0,0,.2),0 12px 30px rgba(0,0,0,.26);
-  -webkit-backdrop-filter:blur(18px) saturate(200%);backdrop-filter:blur(18px) saturate(200%);
+  background:linear-gradient(135deg,rgba(255,255,255,.032),rgba(255,255,255,.006) 58%,rgba(255,255,255,.02)),
+    linear-gradient(180deg,rgba(255,255,255,.032),transparent 47%);
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.4),inset 0 -14px 26px rgba(0,0,0,.1),0 12px 30px rgba(0,0,0,.22);
+  -webkit-backdrop-filter:blur(13px) saturate(230%);backdrop-filter:blur(13px) saturate(230%);
 }
 .faq-item[open]{background:linear-gradient(135deg,rgba(94,224,192,.11),rgba(255,255,255,.02) 60%,rgba(255,255,255,.05));box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 16px 36px rgba(0,0,0,.28)}
 .promo-pill{
@@ -755,7 +755,7 @@ nav.scrolled .nav-shell{background:linear-gradient(125deg,rgba(255,255,255,.2),r
 
 /* 性能与偏好兜底 */
 @media(max-width:768px){
-  .glass{-webkit-backdrop-filter:blur(20px) saturate(170%);backdrop-filter:blur(20px) saturate(170%)}
+  .glass{-webkit-backdrop-filter:blur(11px) saturate(220%);backdrop-filter:blur(11px) saturate(220%)}
   .glass::before{animation:none}
 }
 
